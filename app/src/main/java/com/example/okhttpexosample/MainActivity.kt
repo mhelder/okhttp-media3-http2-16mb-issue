@@ -9,12 +9,15 @@ import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.datasource.DataSource
 import androidx.media3.datasource.DefaultHttpDataSource
+import androidx.media3.datasource.cronet.CronetDataSource
 import androidx.media3.datasource.okhttp.OkHttpDataSource
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
 import com.example.okhttpexosample.databinding.ActivityMainBinding
 import okhttp3.OkHttpClient
 import okhttp3.Protocol
+import org.chromium.net.CronetEngine
+import java.util.concurrent.Executors
 
 class MainActivity : AppCompatActivity() {
 
@@ -61,6 +64,18 @@ class MainActivity : AppCompatActivity() {
                 .protocols(listOf(Protocol.HTTP_1_1))
                 .build()
             val httpDataSource = OkHttpDataSource.Factory(okHttpClient)
+            binding.playerControlView.player = buildPlayer(httpDataSource)
+                .also(Player::prepareAndPlayItem)
+        }
+
+        // default cronet (http2; requires play services)
+        binding.cronetHttp2Button.setOnClickListener {
+            releasePlayer()
+
+            val cronetEngine = CronetEngine.Builder(applicationContext)
+                .build()
+            val httpDataSource =
+                CronetDataSource.Factory(cronetEngine, Executors.newSingleThreadExecutor())
             binding.playerControlView.player = buildPlayer(httpDataSource)
                 .also(Player::prepareAndPlayItem)
         }
