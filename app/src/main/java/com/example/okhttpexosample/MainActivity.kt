@@ -116,4 +116,4 @@ private fun Player.prepareAndPlayItem() {
 }
 
 private const val mediaUrl =
-    "https://25523.mc.tritondigital.com/OMNY_DSVANDAAGAPP_PODCAST_P/media-session/048a28d3-b74f-4782-ab7f-d07291f80ce1/d/clips/fdd7ab40-270d-4a1e-a257-acd200da1324/2e850afd-b63e-4791-ae3f-b0380101da98/47eba102-a0f8-4277-b44e-b0d1012b5f6f/audio/direct/t1701998186/Gaza_(2_2)_Ondanks_vredespogingen_dreven_Isra_l_en_Palestina_verder_uit_elkaar.mp3?t=1701998186&in_playlist=a4cdb64d-2881-4330-be5d-b0380101dbc7&utm_source=Podcast"
+    "https://25473.mc.tritondigital.com/OMNY_DSVANDAAG_PODCAST_P/media-session/16bd9128-ab1d-4d8b-8261-ac7da5144703/d/clips/fdd7ab40-270d-4a1e-a257-acd200da1324/71125754-bd8a-43e1-9a89-ad86013d02f9/29a6f2f8-0dc9-4f78-b73a-b00b00bea6b2/audio/direct/t1684886453/Moet_de_beer_dood_verhit_de_Italiaanse_gemoederen.mp3?t=1684886453&in_playlist=cb1d5e53-dc3a-4853-84f0-ad86013d0307&utm_source=Podcast"
